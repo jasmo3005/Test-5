@@ -81,8 +81,6 @@ function setup() {
   const volVal = document.getElementById('volVal');
   const pickupBtn = document.getElementById('pickup-orb');
   const textBtn = document.getElementById('toggle-text');
-  const colorBtn = document.getElementById('toggle-orb-color'); // Optional: add this button in HTML
-  const darkBtn = document.getElementById('toggle-dark'); // Optional: add this button in HTML
   const resetBtn = document.getElementById('reset-game');
   const idleBtn = document.getElementById('let-orb-idle');
   const rainMasterBtn = document.getElementById('rain-master');
@@ -151,20 +149,6 @@ function setup() {
   if (textBtn) {
     textBtn.addEventListener('click', () => {
       showText = !showText;
-    });
-  }
-
-  // Toggle orb color button logic (optional)
-  if (colorBtn) {
-    colorBtn.addEventListener('click', () => {
-      orbColor = (orbColor === "yellow") ? "cyan" : "yellow";
-    });
-  }
-
-  // Toggle darkening button logic (optional)
-  if (darkBtn) {
-    darkBtn.addEventListener('click', () => {
-      isMagic = !isMagic;
     });
   }
 
@@ -365,14 +349,3 @@ function windowResized() {
   resizeCanvas(side, side); // Keep canvas square
 }
 
-// Example: toggle orb color with key 'c'
-function keyPressed() {
-  if (key === "p") {
-    showRaindrops = !showRaindrops;
-    return false;
-  }
-  if (key === "c") {
-    orbColor = (orbColor === "yellow") ? "cyan" : "yellow";
-    return false;
-  }
-}
